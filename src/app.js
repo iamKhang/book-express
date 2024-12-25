@@ -1,11 +1,13 @@
 const express = require('express');
-const { engine } = require('express-handlebars');
+const exphbs = require('express-handlebars'); // Sửa dòng import này
 const mongoose = require('mongoose');
 const path = require('path');
 require('dotenv').config();
 
+const routes = require('./routes');
+
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(express.json());
@@ -13,7 +15,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Handlebars setup
-app.engine('hbs', engine({ extname: 'hbs' }));
+app.engine('hbs', exphbs.engine({ // Sửa phần cấu hình này
+    extname: '.hbs',
+    defaultLayout: 'main',
+    partialsDir: [
+        path.join(__dirname, 'views/partials'),
+        path.join(__dirname, 'views/components')  // Thêm đường dẫn components
+    ]
+}));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -23,10 +32,8 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch(err => console.log('MongoDB connection error:', err));
 
 // Routes
-app.get('/', (req, res) => {
-  res.render('home', { title: 'Welcome to Book Express' });
-});
+app.use('/', routes);
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
