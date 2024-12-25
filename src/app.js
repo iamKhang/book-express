@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Handlebars setup
-app.engine('handlebars', engine());
-app.set('view engine', 'handlebars');
+app.engine('hbs', engine({ extname: 'hbs' }));
+app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
 // MongoDB connection
@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Routes
 app.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', { title: 'Welcome to Book Express' });
 });
 
 app.listen(port, () => {
