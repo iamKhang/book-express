@@ -1,0 +1,16 @@
+{
+    "html.hover.documentation": true,
+    "css.hover.documentation": true,
+    "html.hover.references": true,
+    "css.hover.references": true,
+    "html.customData": [],
+    "files.associations": {
+        "*.hbs": "html"
+    },
+    "emmet.includeLanguages": {
+        "handlebars": "html"
+    },
+    "cssModules.camelCase": false,
+    "html-css-class-completion.enableEmmetSupport": true,
+    "html-css-class-completion.includeGlobPattern": "src/public/lib/bootstrap-5.3.3-dist/css/bootstrap.min.css"
+}
