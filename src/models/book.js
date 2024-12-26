@@ -18,5 +18,4 @@ const bookSchema = new mongoose.Schema({
   description: String,
 });
 
-// Create and export the Book model
 module.exports = mongoose.model("Book", bookSchema);

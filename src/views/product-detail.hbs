@@ -1,0 +1,27 @@
+<div class="row mx-5">
+  <div class="col-md-6">
+    <img src="{{book.imageUri}}" class="img-fluid" alt="{{book.title}}" />
+  </div>
+  <div class="col-md-6">
+    <h1>{{book.title}}</h1>
+    <p class="text-danger fw-bold">{{book.discountedPrice}}</p>
+    {{#if book.discount}}
+      <p
+        class="text-decoration-line-through text-muted"
+      >{{book.originalPriceFormatted}}</p>
+    {{/if}}
+    <p>{{book.description}}</p>
+    <p><strong>Nhà cung cấp:</strong> {{book.supplier}}</p>
+    <p><strong>Nhà xuất bản:</strong> {{book.publisher}}</p>
+    <p><strong>Tác giả:</strong>
+      {{#each book.listAuthor}}{{this}}{{#unless @last}},
+        {{/unless}}{{/each}}</p>
+    <p><strong>Thể loại:</strong>
+      {{#each book.listCategory}}{{this}}{{#unless @last}},
+        {{/unless}}{{/each}}</p>
+    <p><strong>Loại bìa:</strong> {{book.coverType}}</p>
+    <p><strong>Số trang:</strong> {{book.numberPage}}</p>
+    <p><strong>Số lượng còn lại:</strong> {{book.stock}}</p>
+    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+  </div>
+</div>
