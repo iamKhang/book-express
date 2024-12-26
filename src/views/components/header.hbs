@@ -1,62 +1,90 @@
 <header class="mb-4">
-    <nav class="navbar navbar-expand-lg" style="background-color: #2E5077;">
-        <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center text-white" href="/">
-                <i class="bi bi-book-half fs-2 me-2"></i>
-                <span class="fs-4 fw-semibold">BookStore</span>
-            </a>
-
-            <!-- Toggle Button -->
-            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <!-- Main Navigation -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-white hover-overlay" href="/"><i class="bi bi-house-door me-1"></i>Trang chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="/categories"><i class="bi bi-grid me-1"></i>Danh mục</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="/new-books"><i class="bi bi-star me-1"></i>Sách mới</a>
-                    </li>
-                </ul>
-
-                <!-- Search Form -->
-                <form class="d-flex me-3">
-                    <div class="input-group">
-                        <input type="search" class="form-control border-0" placeholder="Tìm kiếm sách..." aria-label="Search">
-                        <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-                    </div>
-                </form>
-
-                <!-- User Menu -->
-                <div class="nav-item dropdown">
-                    <a class="nav-link text-white" href="#" role="button" data-bs-toggle="dropdown">
-                        <i class="bi bi-person-circle fs-5"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="/profile"><i class="bi bi-person me-2"></i>Hồ sơ</a></li>
-                        <li><a class="dropdown-item" href="/orders"><i class="bi bi-bag me-2"></i>Đơn hàng</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/logout"><i class="bi bi-box-arrow-right me-2"></i>Đăng xuất</a></li>
-                    </ul>
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary bg-gradient shadow-sm">
+      <div class="container-fluid px-3 px-lg-5">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <i class="bi bi-book-half fs-2 me-2 text-warning"></i>
+          <span class="fs-4 fw-bold text-white">BookStore</span>
+        </a>
+  
+        <!-- Toggle Button -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Main Navigation -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-1">
+              <a class="nav-link text-white rounded px-3 py-2 transition" href="/"><i class="bi bi-house-door me-1"></i>Trang chủ</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link text-white rounded px-3 py-2 transition" href="/categories"><i class="bi bi-grid me-1"></i>Danh mục</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link text-white rounded px-3 py-2 transition" href="/new-releases"><i class="bi bi-star me-1"></i>Sách mới</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link text-white rounded px-3 py-2 transition" href="/best-sellers"><i class="bi bi-trophy me-1"></i>Bán chạy</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link text-white rounded px-3 py-2 transition" href="/promotions"><i class="bi bi-tag me-1"></i>Khuyến mãi</a>
+            </li>
+          </ul>
+  
+          <!-- User Actions -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item mx-1">
+              <a class="nav-link text-white rounded px-3 py-2 transition" href="/cart">
+                <i class="bi bi-cart3 me-1"></i>Giỏ hàng
+                <span class="badge bg-warning text-dark ms-1">0</span>
+              </a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link text-white rounded px-3 py-2 transition" href="/login">
+                <i class="bi bi-box-arrow-in-right me-1"></i>Đăng nhập
+              </a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link text-white rounded px-3 py-2 transition" href="/register">
+                <i class="bi bi-person-plus me-1"></i>Đăng ký
+              </a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link text-white rounded px-3 py-2 transition" href="/profile">
+                <i class="bi bi-person-circle me-1"></i>Tài khoản
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-</header>
-
-<style>
-.hover-overlay:hover {
+  </header>
+  
+  <style>
+  :root {
+    --bs-primary: rgb(0, 107, 179);
+    --bs-primary-rgb: 0, 107, 179;
+  }
+  
+  .bg-primary {
+    background-color: rgba(var(--bs-primary-rgb), 1) !important;
+  }
+  
+  .transition {
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
-}
-</style>
+  }
+  
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      background-color: rgba(var(--bs-primary-rgb), 0.95);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  }
+  </style>

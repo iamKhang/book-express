@@ -10,7 +10,6 @@
         class="text-decoration-line-through text-muted"
       >{{book.originalPriceFormatted}}</p>
     {{/if}}
-    <p>{{book.description}}</p>
     <p><strong>Nhà cung cấp:</strong> {{book.supplier}}</p>
     <p><strong>Nhà xuất bản:</strong> {{book.publisher}}</p>
     <p><strong>Tác giả:</strong>
@@ -22,6 +21,10 @@
     <p><strong>Loại bìa:</strong> {{book.coverType}}</p>
     <p><strong>Số trang:</strong> {{book.numberPage}}</p>
     <p><strong>Số lượng còn lại:</strong> {{book.stock}}</p>
-    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+    <div class="d-flex justify-content-center align-items-center">
+        {{> button title="Thêm vào giỏ hàng" backgroundColorClass="bg-primary" textColorClass="text-white" icon="fa-cart-plus"}}
+        {{> button title="Mua ngay" backgroundColorClass="bg-white" textColorClass="text-primary"}}
+    </div>
   </div>
+  <p>{{book.description}}</p>
 </div>

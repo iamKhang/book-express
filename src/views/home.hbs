@@ -1,10 +1,55 @@
 <h1>{{title}}</h1>
 <div class="container">
+  <!-- Search bar -->
+  <div class="container my-5">
+    <form class="row g-3 align-items-center bg-light p-4 rounded shadow-sm">
+      <div class="col-md-3">
+        <select class="form-select border-0 bg-white shadow-sm" aria-label="Chọn danh mục">
+          <option selected>Chọn danh mục</option>
+          <option value="1">Sách thiếu nhi</option>
+          <option value="2">Sách giáo khoa</option>
+          <option value="3">Sách kỹ năng sống</option>
+          <option value="4">Sách văn học</option>
+          <option value="5">Sách khoa học</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select class="form-select border-0 bg-white shadow-sm" aria-label="Chọn giá">
+          <option selected>Chọn giá</option>
+          <option value="1">Dưới 100.000đ</option>
+          <option value="2">100.000đ - 200.000đ</option>
+          <option value="3">200.000đ - 500.000đ</option>
+          <option value="4">Trên 500.000đ</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <input class="form-control border-0 bg-white shadow-sm" type="search" placeholder="Tìm kiếm" aria-label="Search">
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-primary w-100 text-white shadow-sm" type="submit" style="background-color: rgb(0, 107, 179); border-color: rgb(0, 107, 179);">
+          <i class="bi bi-search me-2"></i>Tìm kiếm
+        </button>
+      </div>
+    </form>
+  </div>
+  
   <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
     {{#each books}}
-    <!-- <a href="/books/{{id}}" class="text-decoration-none text-dark d-block"> -->
       {{> product-card}}
-    <!-- </a> -->
     {{/each}}
   </div>
 </div>
+
+
+<style>
+  .form-select:focus,
+  .form-control:focus {
+    border-color: rgb(0, 107, 179);
+    box-shadow: 0 0 0 0.2rem rgba(0, 107, 179, 0.25);
+  }
+  
+  .btn-primary:hover {
+    background-color: rgb(0, 87, 159) !important;
+    border-color: rgb(0, 87, 159) !important;
+  }
+</style>
