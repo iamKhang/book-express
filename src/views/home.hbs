@@ -2,28 +2,28 @@
 <div class="container">
   <!-- Search bar -->
   <div class="container my-5">
-    <form class="row g-3 align-items-center bg-light p-4 rounded shadow-sm">
+    <form class="row g-3 align-items-center bg-light p-4 rounded shadow-sm" action="/search" method="GET">
       <div class="col-md-3">
-        <select class="form-select border-0 bg-white shadow-sm" aria-label="Chọn danh mục">
-          <option selected>Chọn danh mục</option>
-          <option value="1">Sách thiếu nhi</option>
-          <option value="2">Sách giáo khoa</option>
-          <option value="3">Sách kỹ năng sống</option>
-          <option value="4">Sách văn học</option>
-          <option value="5">Sách khoa học</option>
+        <select class="form-select border-0 bg-white shadow-sm" name="category" aria-label="Chọn danh mục">
+          <option value="">Chọn danh mục</option>
+          <option value="Sách thiếu nhi">Sách thiếu nhi</option>
+          <option value="Sách giáo khoa">Sách giáo khoa</option>
+          <option value="Sách kỹ năng sống">Sách kỹ năng sống</option>
+          <option value="Sách văn học">Sách văn học</option>
+          <option value="Sách khoa học">Sách khoa học</option>
         </select>
       </div>
       <div class="col-md-3">
-        <select class="form-select border-0 bg-white shadow-sm" aria-label="Chọn giá">
-          <option selected>Chọn giá</option>
-          <option value="1">Dưới 100.000đ</option>
-          <option value="2">100.000đ - 200.000đ</option>
-          <option value="3">200.000đ - 500.000đ</option>
-          <option value="4">Trên 500.000đ</option>
+        <select class="form-select border-0 bg-white shadow-sm" name="priceRange" aria-label="Chọn giá">
+          <option value="">Chọn giá</option>
+          <option value="0-100000">Dưới 100.000đ</option>
+          <option value="100000-200000">100.000đ - 200.000đ</option>
+          <option value="200000-500000">200.000đ - 500.000đ</option>
+          <option value="500000-999999999">Trên 500.000đ</option>
         </select>
       </div>
       <div class="col-md-4">
-        <input class="form-control border-0 bg-white shadow-sm" type="search" placeholder="Tìm kiếm" aria-label="Search">
+        <input class="form-control border-0 bg-white shadow-sm" type="search" name="keyword" placeholder="Tìm kiếm" aria-label="Search">
       </div>
       <div class="col-md-2">
         <button class="btn btn-primary w-100 text-white shadow-sm" type="submit" style="background-color: rgb(0, 107, 179); border-color: rgb(0, 107, 179);">
